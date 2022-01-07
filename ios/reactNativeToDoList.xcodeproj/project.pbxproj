@@ -14,6 +14,8 @@
 		5C48BAD5CDE2A178A33257ED /* libPods-reactNativeToDoList-reactNativeToDoListTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D113EC9D9D3A6697AA3D8D7 /* libPods-reactNativeToDoList-reactNativeToDoListTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		90182F0DC63E2903B10CD35E /* libPods-reactNativeToDoList.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AAFBC056C27A058370A21FB7 /* libPods-reactNativeToDoList.a */; };
+		583D377168DD42CDAF7D53EF /* MabryPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F37FE050DCE54A72BF1630FD /* MabryPro-Bold.otf */; };
+		81AF063026DD416F8A65A5AB /* MabryPro-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 03657F45962543599C4AB2E1 /* MabryPro-Medium.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		B4EF5524A954D9E2577E00A0 /* Pods-reactNativeToDoList-reactNativeToDoListTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reactNativeToDoList-reactNativeToDoListTests.release.xcconfig"; path = "Target Support Files/Pods-reactNativeToDoList-reactNativeToDoListTests/Pods-reactNativeToDoList-reactNativeToDoListTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		FC2D3484FC068967E3599923 /* Pods-reactNativeToDoList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reactNativeToDoList.release.xcconfig"; path = "Target Support Files/Pods-reactNativeToDoList/Pods-reactNativeToDoList.release.xcconfig"; sourceTree = "<group>"; };
+		F37FE050DCE54A72BF1630FD /* MabryPro-Bold.otf */ = {isa = PBXFileReference; name = "MabryPro-Bold.otf"; path = "../assets/fonts/MabryPro-Bold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		03657F45962543599C4AB2E1 /* MabryPro-Medium.otf */ = {isa = PBXFileReference; name = "MabryPro-Medium.otf"; path = "../assets/fonts/MabryPro-Medium.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +126,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				A0C6BDD40151F8AF82ADA497 /* Pods */,
+				C2309ABFA77D4FF5815DC540 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -148,6 +153,16 @@
 			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		C2309ABFA77D4FF5815DC540 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				F37FE050DCE54A72BF1630FD /* MabryPro-Bold.otf */,
+				03657F45962543599C4AB2E1 /* MabryPro-Medium.otf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -245,6 +260,8 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				583D377168DD42CDAF7D53EF /* MabryPro-Bold.otf in Resources */,
+				81AF063026DD416F8A65A5AB /* MabryPro-Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

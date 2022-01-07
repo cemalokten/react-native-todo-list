@@ -1,7 +1,15 @@
-import React, {useState, useRef} from 'react';
-import {Text, View, TextInput, Button, StyleSheet} from 'react-native';
+import React, {useState, useEffect} from 'react';
+import {
+  Text,
+  View,
+  TextInput,
+  Pressable,
+  StyleSheet,
+  ScrollView,
+} from 'react-native';
 import {TodoList} from './src/components/TodoList/TodoList';
 import uuid from 'react-native-uuid';
+import {Todo} from './src/components/Todo/Todo';
 
 const App = () => {
   const [todos, setTodos] = useState([]);
@@ -14,6 +22,7 @@ const App = () => {
       ...allTodos,
       {id: uuid.v4(), title: title, complete: false},
     ]);
+    setText('');
   };
 
   const checkTodo = id => {
@@ -31,15 +40,38 @@ const App = () => {
 
   return (
     <View style={style.view}>
+      <ScrollView style={[style.scrollView]}>
+        <TodoList todos={todos} checkTodo={checkTodo} />
+      </ScrollView>
+
       <TextInput
         onChangeText={value => setText(value)}
         defaultValue={text}
-        placeholder="Add a todo"
+        placeholder="What's Next?"
+        style={[style.textInput]}
       />
-      <Button title={'Add'} onPress={addTodo} />
-      <Button title={'Clear Completed'} onPress={clearComplete} />
-      <Text>{todos.filter(todo => !todo.complete).length} Left to do</Text>
-      <TodoList todos={todos} checkTodo={checkTodo} />
+
+      <Pressable
+        onPress={addTodo}
+        style={({pressed}) => [
+          style.button,
+          style.purpleButton,
+          {opacity: pressed ? 0.8 : 1},
+          {transform: pressed ? [{scale: 0.97}] : [{scale: 1}]},
+        ]}>
+        <Text style={style.buttonText}>Add</Text>
+      </Pressable>
+
+      <Pressable
+        onPress={clearComplete}
+        style={({pressed}) => [
+          style.button,
+          style.greenButton,
+          {opacity: pressed ? 0.8 : 1},
+          {transform: pressed ? [{scale: 0.97}] : [{scale: 1}]},
+        ]}>
+        <Text style={style.buttonText}>Clear</Text>
+      </Pressable>
     </View>
   );
 };
@@ -47,12 +79,54 @@ const App = () => {
 const style = StyleSheet.create({
   text: {
     color: 'blue',
-    borderRadius: 5,
+  },
+  scrollView: {
+    alignSelf: 'stretch',
   },
   view: {
+    marginTop: 60,
     flex: 1,
     alignItems: 'center',
+    borderTopWidth: 3,
+    borderTopColor: 'black',
+  },
+  textInput: {
+    marginTop: 36,
+    alignItems: 'center',
     justifyContent: 'center',
+    paddingVertical: 12,
+    paddingHorizontal: 32,
+    borderRadius: 50,
+    borderWidth: 3,
+    borderColor: '#000',
+    width: 326,
+    elevation: 3,
+    fontSize: 25,
+    fontFamily: 'MabryPro-Medium',
+    textAlign: 'center',
+  },
+  buttonText: {
+    fontSize: 25,
+    fontFamily: 'MabryPro-Medium',
+  },
+  button: {
+    marginTop: 30,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 12,
+    paddingHorizontal: 32,
+    borderRadius: 50,
+    borderWidth: 3,
+    borderColor: '#000',
+    width: 326,
+    elevation: 3,
+  },
+  purpleButton: {
+    backgroundColor: '#696FFF',
+  },
+  greenButton: {
+    backgroundColor: '#6CFF69',
+    marginBottom: 40,
   },
 });
 
