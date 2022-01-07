@@ -16,18 +16,30 @@ const App = () => {
     ]);
   };
 
+  const checkTodo = id => {
+    const newTodos = [...todos];
+    const todo = newTodos.find(t => t.id === id);
+    todo.complete = !todo.complete;
+    console.log(JSON.stringify(todos, null, 2));
+    setTodos(newTodos);
+  };
+
+  const clearComplete = () => {
+    const incompleteTodos = todos.filter(todo => !todo.complete);
+    setTodos(incompleteTodos);
+  };
+
   return (
     <View style={style.view}>
-      <Text>TO DO LIST</Text>
       <TextInput
         onChangeText={value => setText(value)}
         defaultValue={text}
         placeholder="Add a todo"
       />
-      <Button title={'Add'} color="red" onPress={addTodo} />
-      <Button title={'Clear Completed'} color="red" />
-      <Text style={style.text}>0 Left to do</Text>
-      <TodoList todos={todos} />
+      <Button title={'Add'} onPress={addTodo} />
+      <Button title={'Clear Completed'} onPress={clearComplete} />
+      <Text>{todos.filter(todo => !todo.complete).length} Left to do</Text>
+      <TodoList todos={todos} checkTodo={checkTodo} />
     </View>
   );
 };
