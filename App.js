@@ -6,10 +6,11 @@ import {
   Pressable,
   StyleSheet,
   ScrollView,
+  KeyboardAvoidingView,
+  Platform,
 } from 'react-native';
 import {TodoList} from './src/components/TodoList/TodoList';
 import uuid from 'react-native-uuid';
-import {Todo} from './src/components/Todo/Todo';
 
 const App = () => {
   const [todos, setTodos] = useState([]);
@@ -39,7 +40,9 @@ const App = () => {
   };
 
   return (
-    <View style={style.view}>
+    <KeyboardAvoidingView
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      style={style.view}>
       <ScrollView style={[style.scrollView]}>
         <TodoList todos={todos} checkTodo={checkTodo} />
       </ScrollView>
@@ -72,7 +75,7 @@ const App = () => {
         ]}>
         <Text style={style.buttonText}>Clear</Text>
       </Pressable>
-    </View>
+    </KeyboardAvoidingView>
   );
 };
 
