@@ -2,7 +2,9 @@
 
 This is a simple, cross-platform Todo List application built using React Native and the Metro bundler. 
 
-It allows users to add, delete, and toggle the completion status of tasks. 
+It allows users to add, delete, and toggle the completion status of tasks.
+
+<img width="385" alt="react-native" src="https://user-images.githubusercontent.com/60609268/236027772-f2fe1006-25d6-493d-ba58-af2c9c7c367e.png">
 
 #### Prerequisites
 - Node.js (>= 14.x.x)
@@ -72,7 +74,7 @@ react-native-todo-list/
  └── README.md
 ```
 
-- `src/components/``: Contains the main UI components of the application.
+- `src/components/`: Contains the main UI components of the application.
   - `Todo/`: Folder containing the individual task item component (Todo.js).
   - `TodoList/`: Folder containing the container for the list of tasks (TodoList.js).
   - `styles/theme/`: Contains the global styles and theme used throughout the application (global-style.js and index.js).
