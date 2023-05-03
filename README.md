@@ -77,6 +77,6 @@ react-native-todo-list/
 - `src/components/`: Contains the main UI components of the application.
   - `Todo/`: Folder containing the individual task item component (Todo.js).
   - `TodoList/`: Folder containing the container for the list of tasks (TodoList.js).
-  - `styles/theme/`: Contains the global styles and theme used throughout the application (global-style.js and index.js).
-`App.js`: Main application component that ties everything together.
-`index.js`: Entry point for the application.
+  - `styles/theme/`: Contains the global styles and theme used throughout the application (global-style.js and index.js)
+- `App.js`: Main application component that ties everything together.
+- `index.js`: Entry point for the application.
