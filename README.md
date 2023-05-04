@@ -52,7 +52,7 @@ Run the app on an iOS simulator:
 
 #### Application Structure
 
-The project is organized as follows:
+The project is organised as follows:
 
 ```bash
 react-native-todo-list/
